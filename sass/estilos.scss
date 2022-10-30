@@ -1,0 +1,290 @@
+//hojas parciales
+
+@import "utilities/variables";
+@import "utilities/listas";
+@import "utilities/mixin";
+@import "utilities/extend.scss";
+
+
+/* reset */
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* estilo del div padre - estructura de la pagina*/
+body {
+    height: 100%;
+    div{
+        display: grid;
+        grid-template-columns: 20% 80% ;
+        
+        /* grid-template-area*/
+    
+        grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+        }
+    }
+
+   
+
+   /* estilos de header */
+
+header {
+@include animacion (header);
+    .logo {
+    height: 100px ;
+    width: 100px ;
+
+    }
+    .img--facebook {
+        @extend %iconos-redes;
+        right: 10px;
+
+    }
+    .img--instagram {   
+        @extend %iconos-redes; 
+        right: 45px;
+    }
+    h1 {
+        position: absolute;
+        top: 2rem;
+        color: aliceblue;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: 'Libre Baskerville', serif;         
+    }
+
+}
+
+/* estilos de nav */
+
+nav {
+    background-color: $color-principal ;
+    grid-area:nav;
+    padding: 1rem;
+    border: 3px solid $color-principal;
+    text-align:left; 
+    ul{
+        li{
+            color: $color-secundario;
+            list-style: none;
+            font-weight: bold;
+            line-height: 2;
+            &:hover {filter: drop-shadow(8px 8px 10px $color-terciario);
+            }
+
+            a{
+                text-decoration: none;
+                color: $color-terciario;
+                font-size: 2rem;
+                &:hover {
+                    color: $color-terciario;
+                }
+            }
+        }
+    } 
+}
+
+/* estilos main */
+
+main {
+    grid-area:main;
+       
+          .wpp{
+            display: none;
+          }
+         div {
+                display: flex;
+                flex-direction: row;
+             div {
+                line-height: 2;
+                margin-top: 2rem;
+                flex-direction: column;
+                text-align:center;
+                color: $color-secundario;
+                padding: 2rem;}
+                h2{
+                font-size: nth($tamaños-fuente, 2);}
+                p {
+                    font-size: nth($tamaños-fuente, 3);}
+                
+                
+                a {
+                    font-size: nth($tamaños-fuente,3);
+                    color: $color-principal;
+                    text-decoration: none;
+                    padding: 2rem;
+                    height: 50%;
+                    text-align: center;
+                    border: 3px;}
+                div{
+                div{ 
+
+                   button {
+                    margin-top: 3rem;
+                    background-color: $color-principal;
+                    border-radius: 3rem;
+                    &:hover {
+                        transform: translate( 2px, -2px);
+                        filter: drop-shadow(8px 8px 10px $color-principal);
+                    }   
+                        a{
+                            color: $color-terciario;
+                            &:hover {
+                            color: $color-terciario;                          
+                                                      
+                                    }
+                         }   
+                        }
+                }
+            .contactos {
+                height: 10000px;
+                display:block        
+                       }
+         } 
+             
+        } 
+}
+   
+.turno {
+    @extend %contenedor-main;
+}
+
+
+.main__nuestros-servicios {
+    display: flex;
+    flex-direction: row;
+}
+
+/* estilos de footer */
+
+footer {
+    @include animacion (footer);
+    color: aliceblue;
+    padding: 1rem;
+    line-height: 1,5;
+    list-style: none;
+}
+
+
+
+
+  /*media queries*/
+
+  /*media queries mobile tablet*/
+
+  @media screen and (max-width: 1023px) {
+    body {
+        div{
+            display: flex;
+            flex-direction: column;
+            }
+        main {
+                div {
+                    .ubicacion {
+                    overflow: auto;
+                                }
+                    .calendly-inline-widget{
+                    overflow: auto;}
+                    
+                }
+                .row{
+                    display: flex;
+                    flex-direction: row;
+                }
+        }
+    }
+}
+      
+  
+
+  /*media queries mobile*/
+
+  @media screen and (max-width: 576px) {
+  
+  
+  body {
+    div{
+        display: flex;
+        flex-direction: column;
+         main {
+            img {
+                width: 70%;
+            }
+         }
+        }
+    
+       .img--facebook {
+        position: fixed;
+        top: 110px;
+        left: 2px;
+        }   
+        .img--instagram {   
+        position: fixed;
+        top: 150px;
+        left: 2px;
+        }
+
+    
+nav {
+     ul{
+        li{
+            display: inline-block;
+            a {font-size: 1rem;
+              }
+          }
+        }
+    }
+
+
+main {
+    text-align: center;
+
+         div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            } 
+        .calendly-inline-widget {
+            display: none;
+
+        } 
+
+        .wpp{ 
+            display: block;
+        }
+       
+        .main__donde-estamos {
+            width: 60%;
+            }
+
+        .main__nuestros-servicios {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+        
+        .card-img-top {
+            width: 50%;
+            height: 50%;
+            margin: auto;
+            }
+        
+        .color {
+            background-color:  rgb(84, 14, 74) !important; 
+            margin: auto;
+            }
+            div {
+                iframe {
+                    width: 85%!important;
+                       }
+                }
+            }
+        }
+    }

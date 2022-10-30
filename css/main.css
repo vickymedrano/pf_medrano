@@ -1,0 +1,203 @@
+header .img--facebook, header .img--instagram {
+  position: absolute;
+  top: 40px;
+  height: 30px;
+  width: 30px; }
+
+.turno {
+  height: 18.75rem; }
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif; }
+
+/* estilo del div padre - estructura de la pagina*/
+body {
+  height: 100%; }
+  body div {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    /* grid-template-area*/
+    grid-template-areas: "header header" "nav main" "footer footer"; }
+
+/* estilos de header */
+header {
+  grid-area: header;
+  animation-name: gradiente;
+  animation-duration: 20s;
+  animation-iteration-count: infinite; }
+
+@keyframes gradiente {
+  0% {
+    background-color: #3f0b37; }
+  25% {
+    background-color: #7a166b; }
+  75% {
+    background-color: #753469; }
+  100% {
+    background-color: #3f0b37; } }
+  header .logo {
+    height: 100px;
+    width: 100px; }
+  header .img--facebook {
+    right: 10px; }
+  header .img--instagram {
+    right: 45px; }
+  header h1 {
+    position: absolute;
+    top: 2rem;
+    color: aliceblue;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif; }
+
+/* estilos de nav */
+nav {
+  background-color: #3f0b37;
+  grid-area: nav;
+  padding: 1rem;
+  border: 3px solid #3f0b37;
+  text-align: left; }
+  nav ul li {
+    color: #1f011b;
+    list-style: none;
+    font-weight: bold;
+    line-height: 2; }
+    nav ul li:hover {
+      filter: drop-shadow(8px 8px 10px #f9f5f8); }
+    nav ul li a {
+      text-decoration: none;
+      color: #f9f5f8;
+      font-size: 2rem; }
+      nav ul li a:hover {
+        color: #f9f5f8; }
+
+/* estilos main */
+main {
+  grid-area: main; }
+  main .wpp {
+    display: none; }
+  main div {
+    display: flex;
+    flex-direction: row; }
+    main div div {
+      line-height: 2;
+      margin-top: 2rem;
+      flex-direction: column;
+      text-align: center;
+      color: #1f011b;
+      padding: 2rem; }
+    main div h2 {
+      font-size: 2.7rem; }
+    main div p {
+      font-size: 1.5rem; }
+    main div a {
+      font-size: 1.5rem;
+      color: #3f0b37;
+      text-decoration: none;
+      padding: 2rem;
+      height: 50%;
+      text-align: center;
+      border: 3px; }
+    main div div div button {
+      margin-top: 3rem;
+      background-color: #3f0b37;
+      border-radius: 3rem; }
+      main div div div button:hover {
+        transform: translate(2px, -2px);
+        filter: drop-shadow(8px 8px 10px #3f0b37); }
+      main div div div button a {
+        color: #f9f5f8; }
+        main div div div button a:hover {
+          color: #f9f5f8; }
+    main div div .contactos {
+      height: 10000px;
+      display: block; }
+
+.main__nuestros-servicios {
+  display: flex;
+  flex-direction: row; }
+
+/* estilos de footer */
+footer {
+  grid-area: footer;
+  animation-name: gradiente;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  color: aliceblue;
+  padding: 1rem;
+  line-height: 1,5;
+  list-style: none; }
+
+@keyframes gradiente {
+  0% {
+    background-color: #3f0b37; }
+  25% {
+    background-color: #7a166b; }
+  75% {
+    background-color: #753469; }
+  100% {
+    background-color: #3f0b37; } }
+
+/*media queries*/
+/*media queries mobile tablet*/
+@media screen and (max-width: 1023px) {
+  body div {
+    display: flex;
+    flex-direction: column; }
+  body main div .ubicacion {
+    overflow: auto; }
+  body main div .calendly-inline-widget {
+    overflow: auto; }
+  body main .row {
+    display: flex;
+    flex-direction: row; } }
+
+/*media queries mobile*/
+@media screen and (max-width: 576px) {
+  body div {
+    display: flex;
+    flex-direction: column; }
+    body div main img {
+      width: 70%; }
+  body .img--facebook {
+    position: fixed;
+    top: 110px;
+    left: 2px; }
+  body .img--instagram {
+    position: fixed;
+    top: 150px;
+    left: 2px; }
+  body nav ul li {
+    display: inline-block; }
+    body nav ul li a {
+      font-size: 1rem; }
+  body main {
+    text-align: center; }
+    body main div {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    body main .calendly-inline-widget {
+      display: none; }
+    body main .wpp {
+      display: block; }
+    body main .main__donde-estamos {
+      width: 60%; }
+    body main .main__nuestros-servicios {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    body main .card-img-top {
+      width: 50%;
+      height: 50%;
+      margin: auto; }
+    body main .color {
+      background-color: #540e4a !important;
+      margin: auto; }
+    body main div iframe {
+      width: 85% !important; } }

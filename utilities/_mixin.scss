@@ -1,0 +1,25 @@
+@mixin animacion  ($grid-area) {
+    grid-area:$grid-area; 
+
+// animacion de gradiente
+    animation-name: gradiente; 
+    animation-duration: 20s;
+    animation-iteration-count: infinite ;
+    @keyframes gradiente {
+        0% {
+            background-color:  rgb(63, 11, 55);
+        }
+
+        25% {
+            background-color:  rgb(122, 22, 107);
+        }
+
+        75% {
+            background-color:  #753469;
+        }
+
+        100% {
+            background-color:  rgb(63, 11, 55);
+        }
+     }
+}
